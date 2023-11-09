@@ -1,0 +1,25 @@
+From 217f97faabba058b53b6abb0827b74b0787beaa7 Mon Sep 17 00:00:00 2001
+From: Ylarod <me@ylarod.cn>
+Date: Tue, 18 Jul 2023 16:04:55 +0800
+Subject: [PATCH 07/10] Florida: protocol_unexpected_command
+
+---
+ src/droidy/droidy-client.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/droidy/droidy-client.vala b/src/droidy/droidy-client.vala
+index 0ed2edeb..9de04b54 100644
+--- a/src/droidy/droidy-client.vala
++++ b/src/droidy/droidy-client.vala
+@@ -1013,7 +1013,7 @@ namespace Frida.Droidy {
+ 						case "OPEN":
+ 						case "CLSE":
+ 						case "WRTE":
+-							throw new Error.PROTOCOL ("Unexpected command");
++							break; // throw new Error.PROTOCOL ("Unexpected command");
+ 
+ 						default:
+ 							var length = parse_length (command_or_length);
+-- 
+2.34.1
+
